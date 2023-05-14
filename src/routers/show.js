@@ -27,7 +27,7 @@ router.get("/:id", async (req, res, next) => {
   }
 });
 
-// Get shows of a specific genre
+// Get shows of a  specific genre
 router.get("/genres/:genre", async (req, res, next) => {
   try {
     const { genre } = req.params;
