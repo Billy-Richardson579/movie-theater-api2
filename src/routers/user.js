@@ -13,7 +13,7 @@ router.get("/", async (req, res, next) => {
   });
   
   // Get one user by ID
-  router.get("/:id", async (req, res, next) => {
+router.get("/:id", async (req, res, next) => {
     try {
       const { id } = req.params;
       const user = await User.findByPk(id);
@@ -27,8 +27,8 @@ router.get("/", async (req, res, next) => {
     }
   });
   
-  // Get all shows watched by a user
-  router.get("/:id/shows", async (req, res, next) => {
+// Get all shows watched by a user
+router.get("/:id/shows", async (req, res, next) => {
     try {
       const { id } = req.params;
       const user = await User.findByPk(id, { include: Show });
@@ -42,8 +42,8 @@ router.get("/", async (req, res, next) => {
     }
   });
   
-  // Update and add a show if a user has watched it
-  router.put("/:id/shows/:showId", async (req, res, next) => {
+// Update and add a show if a user has watched it
+router.put("/:id/shows/:showId", async (req, res, next) => {
     try {
       const { id, showId } = req.params;
       const user = await User.findByPk(id);
