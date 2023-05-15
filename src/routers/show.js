@@ -45,7 +45,7 @@ router.put("/:id/:ratings", async (req, res, next) => {
   
       const show = await Show.findByPk(id);
       if (show) {
-        show.rating = ratings; // Update the rating field with the new value
+        show.rating = ratings; // Updates the rating with the new value
         await show.save();
   
         res.status(200).send({message: 'Update Complete'});
@@ -63,7 +63,7 @@ router.put("/:id/status/:status", async (req, res, next) => {
   
       const show = await Show.findByPk(id);
       if (show) {
-        show.status = status; // Update the status field with the new value
+        show.status = status; // Updates the status with the new value
         await show.save();
   
         res.status(200).send({message: 'Change Complete'});
